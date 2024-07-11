@@ -1,29 +1,29 @@
-from random import choice
+import random
 from brain_games.cli import welcome_user
 from brain_games.scripts.utils import random_number, wrong_answer
 
 
 def calc():
-    number_1 = random_number()
-    number_2 = random_number()
+    first_number = random_number()
+    second_number = random_number()
     arithmetic_operations = ["+", "-", "*"]
-    random_operator = choice(arithmetic_operations)
-    if int(number_1) > int(number_2):
-        question = f"{number_1} {random_operator} {number_2}"
+    random_operator = random.choice(arithmetic_operations)
+    if int(first_number) > int(second_number):
+        question = f"{first_number} {random_operator} {second_number}"
         if random_operator == "+":
-            correct_answer = number_1 + number_2
+            correct_answer = first_number + second_number
         elif random_operator == "-":
-            correct_answer = number_1 - number_2
+            correct_answer = first_number - second_number
         else:
-            correct_answer = number_1 * number_2
+            correct_answer = first_number * second_number
     else:
-        question = f"{number_2} {random_operator} {number_1}"
+        question = f"{second_number} {random_operator} {first_number}"
         if random_operator == "+":
-            correct_answer = number_2 + number_1
+            correct_answer = second_number + first_number
         elif random_operator == "-":
-            correct_answer = number_2 - number_1
+            correct_answer = second_number - first_number
         else:
-            correct_answer = number_2 * number_1
+            correct_answer = second_number * first_number
     return question, correct_answer
 
 
