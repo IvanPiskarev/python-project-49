@@ -1,8 +1,8 @@
-from random import randint
+import random
 
 
 def random_number(max_value=10):
-    return randint(1, max_value)
+    return random.randint(1, max_value)
 
 
 def wrong_answer(answer, c_answer, name):
