@@ -6,7 +6,7 @@ def even_game():
     name = welcome_user()
     rounds = 0
     while rounds < 3:
-        number = random_number()
+        number = random_number(100)
         print("Answer 'yes' if number even otherwise answer 'no'.")
         print(f"Qusetion: {number}")
         answer = str(input("Your asnwer: ")).lower()
