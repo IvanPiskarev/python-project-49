@@ -1,16 +1,17 @@
+import random
 from brain_games.cli import welcome_user
-from brain_games.scripts.utils import random_number, wrong_answer
+from brain_games.scripts.utils import wrong_answer
 
 
 def even_game():
     name = welcome_user()
     rounds = 0
     while rounds < 3:
-        number = random_number(1, 100)
+        random_number = random.randint(1, 100)
         print("Answer 'yes' if number even otherwise answer 'no'.")
-        print(f"Qusetion: {number}")
+        print(f"Qusetion: {random_number}")
         answer = str(input("Your asnwer: ")).lower()
-        if number % 2 == 0:
+        if random_number % 2 == 0:
             correct_answer = "yes"
         else:
             correct_answer = "no"
