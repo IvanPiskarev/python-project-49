@@ -1,6 +1,7 @@
+import random
 import math
 from brain_games.cli import welcome_user
-from brain_games.scripts.utils import random_number, wrong_answer
+from brain_games.scripts.utils import wrong_answer
 
 
 def gcd(first_number, second_number):
@@ -11,8 +12,8 @@ def gcd_game():
     name = welcome_user()
     rounds = 0
     while rounds < 3:
-        first_number = random_number(2, 100)
-        second_number = random_number(2, 100)
+        first_number = random.randint(2, 100)
+        second_number = random.randint(2, 100)
         correct_answer = gcd(first_number, second_number)
         print("Find the greatest common divisor of given numbers.")
         print(f"Question: {first_number} {second_number}")
