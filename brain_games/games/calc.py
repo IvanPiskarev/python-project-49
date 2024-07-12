@@ -8,22 +8,13 @@ def calc():
     second_number = random.randint(1, 10)
     arithmetic_operations = ["+", "-", "*"]
     random_operator = random.choice(arithmetic_operations)
-    if int(first_number) > int(second_number):
-        question = f"{first_number} {random_operator} {second_number}"
-        if random_operator == "+":
-            correct_answer = first_number + second_number
-        elif random_operator == "-":
-            correct_answer = first_number - second_number
-        else:
-            correct_answer = first_number * second_number
+    question = f"{first_number} {random_operator} {second_number}"
+    if random_operator == "+":
+        correct_answer = first_number + second_number
+    elif random_operator == "-":
+        correct_answer = first_number - second_number
     else:
-        question = f"{second_number} {random_operator} {first_number}"
-        if random_operator == "+":
-            correct_answer = second_number + first_number
-        elif random_operator == "-":
-            correct_answer = second_number - first_number
-        else:
-            correct_answer = second_number * first_number
+        correct_answer = first_number * second_number
     return question, correct_answer
 
 
