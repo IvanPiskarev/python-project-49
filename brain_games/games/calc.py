@@ -1,11 +1,11 @@
 import random
 from brain_games.cli import welcome_user
-from brain_games.scripts.utils import random_number, wrong_answer
+from brain_games.scripts.utils import wrong_answer
 
 
 def calc():
-    first_number = random_number()
-    second_number = random_number()
+    first_number = random.randint(1, 10)
+    second_number = random.randint(1, 10)
     arithmetic_operations = ["+", "-", "*"]
     random_operator = random.choice(arithmetic_operations)
     if int(first_number) > int(second_number):
