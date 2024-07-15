@@ -8,7 +8,7 @@ def calc():
     second_number = random.randint(1, 10)
     arithmetic_operations = ["+", "-", "*"]
     random_operator = random.choice(arithmetic_operations)
-    question = f"{first_number} {random_operator} {second_number}"
+    question = f"Question: {first_number} {random_operator} {second_number}"
     if random_operator == "+":
         correct_answer = first_number + second_number
     elif random_operator == "-":
