@@ -14,6 +14,7 @@ def random_progression():
 
 def progression_game():
     name = welcome_user()
+    print("What number is missing in the progression?")
     rounds = 0
     while rounds < 3:
         progression = random_progression()
