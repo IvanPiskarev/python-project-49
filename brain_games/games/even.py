@@ -9,7 +9,7 @@ def even_game():
     while rounds < 3:
         random_number = random.randint(1, 100)
         print("Answer 'yes' if number even otherwise answer 'no'.")
-        print(f"Qusetion: {random_number}")
+        print(f"Question: {random_number}")
         answer = str(input("Your asnwer: ")).lower()
         if random_number % 2 == 0:
             correct_answer = "yes"
