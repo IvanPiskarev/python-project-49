@@ -1,41 +1,23 @@
 import random
-from brain_games.cli import welcome_user
-from brain_games.scripts.utils import wrong_answer
-
-
-def prime(number):
-    if number == 1:
-        return False
-    if number == 2:
-        return True
-    i = 2
-    while i < number:
-        if number % i == 0:
-            return False
-        else:
-            i += 1
-    return True
 
 
 def prime_game():
-    name = welcome_user()
-    rounds = 0
-    while rounds < 3:
-        random_number = random.randint(1, 100)
-        print('Answer "yes" if given number is prime. Otherwise answer "no".')
-        print(f"Question: {random_number}")
-        answer = str(input("Your asnwer: ")).lower()
-        if prime(random_number) is True:
-            correct_answer = "yes"
-        else:
-            correct_answer = "no"
-        if answer == correct_answer:
-            rounds += 1
-            print("Correct!")
-            if rounds == 3:
-                print(f"Congratulations, {name}!")
-                return True
-        else:
-            wrong_answer(answer, correct_answer, name)
+    random_number = random.randint(1, 100)
+    question = f"Question: {random_number}"
+    if random_number == 1:
+        correct_answer = "no"
+    elif random_number == 2:
+        correct_answer = "yes"
+    i = 2
+    count = 0
+    while i < random_number:
+        if random_number % i == 0:
+            count += 1
             break
-    return False
+        else:
+            i += 1
+    if count == 0:
+        correct_answer = "yes"
+    else:
+        correct_answer = "no"
+    return question, correct_answer
