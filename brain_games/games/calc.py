@@ -30,7 +30,7 @@ def calc_game():
             rounds += 1
             print("Correct!")
             if rounds == 3:
-                print("Congratulations!")
+                print(f"Congratulations, {name}!")
                 return True
         else:
             wrong_answer(answer, correct_answer, name)
