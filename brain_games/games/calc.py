@@ -20,6 +20,7 @@ def calc():
 
 def calc_game():
     name = welcome_user()
+    print("What is the result of the expression?")
     rounds = 0
     while rounds < 3:
         question, correct_answer = calc()
