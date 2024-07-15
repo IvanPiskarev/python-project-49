@@ -23,7 +23,7 @@ def prime_game():
     while rounds < 3:
         random_number = random.randint(1, 100)
         print('Answer "yes" if given number is prime. Otherwise answer "no".')
-        print(f"Qusetion: {random_number}")
+        print(f"Question: {random_number}")
         answer = str(input("Your asnwer: ")).lower()
         if prime(random_number) is True:
             correct_answer = "yes"
