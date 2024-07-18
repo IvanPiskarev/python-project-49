@@ -1,16 +1,24 @@
 import random
 
 
-def calc_game():
-    first_number = random.randint(1, 10)
-    second_number = random.randint(1, 10)
-    arithmetic_operations = ["+", "-", "*"]
-    random_operator = random.choice(arithmetic_operations)
-    question = f"Question: {first_number} {random_operator} {second_number}"
-    if random_operator == "+":
-        correct_answer = first_number + second_number
-    elif random_operator == "-":
-        correct_answer = first_number - second_number
+GAME_RULE = 'What is the result of the expression?'
+
+
+def calc(num1, num2, operator):
+    if operator == "+":
+        result = num1 + num2
+    elif operator == "-":
+        result = num1 - num2
     else:
-        correct_answer = first_number * second_number
+        result = num1 * num2
+    return result
+
+
+def game():
+    num1 = random.randint(1, 10)
+    num2 = random.randint(1, 10)
+    arithmetic_operators = ["+", "-", "*"]
+    operator = random.choice(arithmetic_operators)
+    question = f"Question: {num1} {operator} {num2}"
+    correct_answer = calc(num1, num2, operator)
     return question, correct_answer
