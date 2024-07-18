@@ -1,3 +1,4 @@
+import prompt
 from brain_games.cli import welcome_user
 
 
@@ -10,14 +11,14 @@ game_rules = {
 }
 
 
-def play_game(game, rule):
+def play_game(module):
     name = welcome_user()
-    print(game_rules[rule])
+    print(module.GAME_RULE)
     rounds = 0
     while rounds < 3:
-        question, correct_answer = game()
+        question, correct_answer = module.game()
         print(question)
-        answer = str(input("Your asnwer: ")).lower()
+        answer = prompt.string("Your asnwer: ")
         if answer == str(correct_answer):
             rounds += 1
             print("Correct!")
@@ -25,8 +26,8 @@ def play_game(game, rule):
                 print(f"Congratulations, {name}!")
                 return True
         else:
-            print(f'''"{answer}" is wrong answer ;(.
-            Correct answer was "{correct_answer}".
-            Let's try again, {name}!''')
+            print(f'"{answer}" is wrong answer ;(.')
+            print(f'Correct answer was "{correct_answer}".')
+            print(f"Let's try again, {name}!")
             break
     return False
