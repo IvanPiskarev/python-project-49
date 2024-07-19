@@ -14,13 +14,12 @@ game_rules = {
 def play_game(module):
     name = welcome_user()
     print(module.GAME_RULE)
-    rounds = 0
-    while rounds < 3:
+    rounds = 3
+    for i in range(rounds):
         question, correct_answer = module.game()
         print(question)
         answer = prompt.string("Your asnwer: ")
         if answer == str(correct_answer):
-            rounds += 1
             print("Correct!")
         else:
             print(f'"{answer}" is wrong answer ;(.')
@@ -28,3 +27,4 @@ def play_game(module):
             print(f"Let's try again, {name}!")
             return False
     print(f"Congratulations, {name}!")
+    return True
