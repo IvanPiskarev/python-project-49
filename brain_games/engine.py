@@ -22,12 +22,9 @@ def play_game(module):
         if answer == str(correct_answer):
             rounds += 1
             print("Correct!")
-            if rounds == 3:
-                print(f"Congratulations, {name}!")
-                return True
         else:
             print(f'"{answer}" is wrong answer ;(.')
             print(f'Correct answer was "{correct_answer}".')
             print(f"Let's try again, {name}!")
-            break
-    return False
+            return False
+    print(f"Congratulations, {name}!")
