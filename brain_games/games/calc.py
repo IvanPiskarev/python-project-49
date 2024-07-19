@@ -5,6 +5,7 @@ GAME_RULE = 'What is the result of the expression?'
 
 
 def calc(num1, num2, operator):
+    """Performs a given mathematical operation with numbers"""
     if operator == "+":
         result = num1 + num2
     elif operator == "-":
@@ -15,6 +16,7 @@ def calc(num1, num2, operator):
 
 
 def game():
+    """Generates a random numbers and a random operator"""
     num1 = random.randint(1, 10)
     num2 = random.randint(1, 10)
     arithmetic_operators = ["+", "-", "*"]
